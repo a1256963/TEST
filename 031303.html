@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            background-color: #ccc;
+            position: relative;
+            padding: 10px;
+            width: 400px;
+        }
+        p::before{
+            position:absolute;
+            /* height: 100px;
+            width: 100px; */
+            content: '『';
+            color: #ff0000;
+            left: -25px;
+            top: -5px;
+            /* text-indent: -5px; */
+            font-size: 50px;
+            
+        }
+        p::after{
+            position:absolute;
+            /* height: 100px;
+            width: 100px; */
+            content: '』';
+            color: #ff0000;
+            right: -25px;
+            bottom: -5px;
+            /* text-indent: 5px; */
+            font-size: 50px;
+            /* background-color: black; */
+        }
+    </style>
+</head>
+<body>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptates nobis ipsum assumenda laborum aperiam inventore veritatis cupiditate vitae animi? Nemo ex necessitatibus est blanditiis, eveniet cum. Commodi, possimus ipsum.</p>
+</body>
+</html>

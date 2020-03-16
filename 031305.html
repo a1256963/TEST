@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .breadcrumb{
+            display: flex;
+        }
+        .breadcrumb li + li::before{
+            content: '>';
+            margin:0 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="breadcrumb">
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+    </ul>
+    <!-- <button class="a">
+        13
+        <button class="b">
+            14
+            <button class="c">
+                12
+            </buttton>
+        </button>
+    </button> -->
+    <!-- <a href="https://www.toyota.com.tw/tech_TNGA.aspx#/"><button>X</button></a> -->
+</body>
+</html>

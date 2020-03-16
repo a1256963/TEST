@@ -1,0 +1,87 @@
+﻿var FAQ_SRC = "/TFAQ/Index2";
+var SRM_SRC = "https://csonline.hotaimotor.com.tw/";
+var MIN_WIDTH = 320;
+$( document ).ready(function() {
+	document.getElementById('is_srm_load').value = '0';
+	document.getElementById('is_srm_open').value = '0';
+    document.getElementById('is_faq_open').value = '0';
+    function onResize() {
+		var headerHeight = $('.header').height() + 10;
+		var windowHeight = window.innerHeight - 10;
+		var windowWidth = $(window).width();
+		var percentageWidth = 0.45;
+		var buttonWidth = 45;
+		var fWidth = windowWidth*percentageWidth < MIN_WIDTH ? MIN_WIDTH : windowWidth*percentageWidth;
+		document.getElementById('show_srm_outer').style.width = fWidth+buttonWidth+'px';
+		document.getElementById('show_srm_outer').style.margin = headerHeight+'px 1px 1px 1px';
+		document.getElementById('show_srm').style.width = fWidth+'px';
+		document.getElementById('srm_iframe').style.width = fWidth+'px';
+		document.getElementById('faq_iframe').style.width = fWidth+'px';
+		document.getElementById('show_srm_outer').style.left = windowWidth - (fWidth+buttonWidth)+'px';
+		document.getElementById('show_srm_outer').style.height = windowHeight-headerHeight+'px';
+	}
+    $(window).resize(onResize);
+    onResize();
+});
+var current_tab = '';
+function show_off_srm(tab){
+	if (tab) {
+		current_tab = tab;
+	} else {
+		if (!current_tab) {
+			current_tab = 'faq';
+		}
+		tab = current_tab;
+	}
+	var headerHeight = $('.header').height() + 10;
+	var windowHeight = window.innerHeight - 10;
+	var windowWidth = $(window).width();
+	var percentageWidth = 0.45;
+	var buttonWidth = 45;
+	var fWidth = windowWidth*percentageWidth < MIN_WIDTH ? MIN_WIDTH : windowWidth*percentageWidth;
+	if(document.getElementById('is_srm_load').value == '0'){
+		document.getElementById('show_srm_outer').style.left = windowWidth - (fWidth+buttonWidth)+'px';
+		document.getElementById('show_srm_outer').style.display = 'block';
+		document.getElementById('is_srm_load').value = '1';
+		if (tab == 'faq') {
+			document.getElementById('is_faq_open').value = '1';
+			document.getElementById('faq_iframe').style.display = 'block';
+			document.getElementById('faq_iframe').src = FAQ_SRC;
+		} else {
+			document.getElementById('is_srm_open').value = '1';
+			document.getElementById('srm_iframe').style.display = 'block';
+			document.getElementById('srm_iframe').src = SRM_SRC;
+		}
+	} else {
+		if ((tab == 'faq' && document.getElementById('is_faq_open').value == '0') || (tab == 'srm' && document.getElementById('is_srm_open').value == '0')) {
+			document.getElementById('show_srm_outer').style.width = fWidth+buttonWidth+'px';
+			document.getElementById('show_srm_outer').style.margin = headerHeight+'px 1px 1px 1px';
+			document.getElementById('show_srm').style.width = fWidth+'px';
+			document.getElementById('show_srm_outer').style.left = windowWidth - (fWidth+buttonWidth)+'px';
+			document.getElementById('show_srm_outer').style.height = (windowHeight - headerHeight)+'px';
+			document.getElementById('show_srm_outer').style.display = 'block';
+			if (tab == 'faq') {
+				document.getElementById('is_srm_open').value = '0';
+				document.getElementById('srm_iframe').style.display = 'none';
+				document.getElementById('is_faq_open').value = '1';
+				document.getElementById('faq_iframe').style.width = fWidth+'px';
+				document.getElementById('faq_iframe').style.display = 'block';
+					document.getElementById('faq_iframe').src = FAQ_SRC;
+			} else {
+				document.getElementById('is_faq_open').value = '0';
+				document.getElementById('faq_iframe').style.display = 'none';
+				document.getElementById('is_srm_open').value = '1';
+				document.getElementById('srm_iframe').style.width = fWidth+'px';
+				document.getElementById('srm_iframe').style.display = 'block';
+				if (document.getElementById('srm_iframe').getAttribute('src') == '') {
+					document.getElementById('srm_iframe').src = SRM_SRC;
+				}
+			}
+		} else {
+			document.getElementById('show_srm_outer').style.left = windowWidth - buttonWidth+'px';
+			document.getElementById('is_faq_open').value = '0';
+			document.getElementById('is_srm_open').value = '0';
+			document.getElementById('show_srm_outer').style.display = 'none';
+		}
+	}
+}

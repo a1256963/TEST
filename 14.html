@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .warp{
+            width: 960px;
+            margin: auto;
+            display: flex;
+        }
+        .item{
+            width: 300px;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .item img{
+            width: 100%;
+            vertical-align: top;
+            /* filter: grayscale(1); */
+            filter: blur(0);
+            transition: 1s;
+        }
+        .item:hover img{
+            /* filter: grayscale(0); */
+            filter: blur(5px);
+        }
+        .item .txt{
+            
+            transition: 1s;
+            position: absolute;
+            color: #fff;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,.6);
+            transform: scale(0) rotate(7200deg);
+            opacity: 0;
+        }
+        .item:hover .txt{
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="item">
+            <img src="http://picsum.photos/200/300?random=1" alt="圖片說明">
+            <div class="txt">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, aperiam?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://picsum.photos/200/300?random=2" alt="圖片說明">
+            <div class="txt">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, aperiam?</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://picsum.photos/200/300?random=3" alt="圖片說明">
+            <div class="txt">
+                <h3>title</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, aperiam?</p>
+            </div>
+        </div>
+    </div>
+    <div class="warp">
+        <div class="item">
+            <div class="txt"></div>
+        </div>
+        <div class="item">
+            <div class="txt"></div>
+        </div>
+        <div class="item">
+            <div class="txt"></div>
+        </div>
+    </div>
+</body>
+</html>

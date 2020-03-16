@@ -1,0 +1,51 @@
+(function () {
+  var ToyotaCookieId = GetCookie('ToyotaCookieId');
+  var ToyotaCanvas = GetCookie('ToyotaCanvas');
+  if (!ToyotaCookieId || !ToyotaCanvas) return;
+
+  var PAGES = [
+    { name: 'login', reg: /owner_login/i },
+    { name: '86', reg: /showroom\/86/i },
+    { name: 'ALPHARD', reg: /showroom\/ALPHARD/i },
+    { name: 'ALTIS', reg:/showroom\/ALTIS/i },
+    { name: 'CAMRY', reg:/showroom\/CAMRY/i },
+    { name: 'CAMRY_HYBRID', reg:/showroom\/CAMRY_HYBRID/i },
+    { name: 'C-HR', reg:/showroom\/C\-HR/i },
+    { name: 'PRADO', reg:/showroom\/PRADO/i },
+    { name: 'PREVIA', reg:/showroom\/PREVIA/i },
+    { name: 'PRIUS', reg:/showroom\/PRIUS/i },
+    { name: 'PRIUS_ALPHA', reg:/showroom\/PRIUS_ALPHA/i },
+    { name: 'PRIUS_C', reg:/showroom\/PRIUS_c/i },
+    { name: 'PRIUS_PHV', reg:/showroom\/PRIUS_PHV/i },
+    { name: 'RAV4', reg:/showroom\/RAV4/i },
+    { name: 'RAV4 HYBRID', reg:/showroom\/RAV4_HYBRID/i },
+    { name: 'SIENNA', reg:/showroom\/SIENNA/i },
+    { name: 'SIENTA', reg:/showroom\/SIENTA/i },
+    { name: 'VIOS', reg:/showroom\/VIOS/i },
+    { name: 'YARIS', reg:/showroom\/YARIS/i },
+    { name: 'HILUX', reg:/showroom\/HILUX/i },
+    { name: 'SUPRA', reg:/showroom\/SUPRA/i },
+  ];
+  var subFolder = 'HOME';
+
+  if (/toyotatire\.aspx/i.test(location.href)) subFolder = 'toyotatire';
+  else {
+    PAGES.forEach(function (p) {
+      if (p.reg.test(location.href)) {
+      subFolder = 'HOME-' + p.name;
+      }
+    });
+  }
+
+  var dataJson = {
+    'subFolder': subFolder,
+    'ecInfo': {
+      'memberID': ToyotaCookieId + '_' + ToyotaCanvas
+    },
+    'trackType': 'view',
+    'trackSubfolderDepth': 1,
+    'targetType': 'usual',
+    'source': 'TOYOTA'
+  };
+  ElandTracker.Track(dataJson);
+})();

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            font-size: 40px;
+            margin: 10px;
+            position: relative;
+            background-attachment: #ccc;
+            padding-left: 20px;
+            
+        }
+        h2::before{
+            /* border-bottom: 3px solid #ff0000; */
+            content: '';
+            background-color: red;
+            width: 4px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 0;
+            /* border-left:  3px solid#ff0000;
+            width: 50px; */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero expedita sunt dolorem explicabo eius, quam odit hic blanditiis necessitatibus optio, fugit corrupti. Iusto enim asperiores rerum saepe adipisci consequuntur. Recusandae?
+        </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis consectetur modi voluptatem accusamus sed atque illum nulla fuga. Dolor mollitia cumque aut modi recusandae animi ut tempore perspiciatis tenetur dignissimos.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quaerat, eveniet sunt delectus similique laudantium beatae, assumenda libero exercitationem cupiditate veniam officiis molestiae non obcaecati nisi. Voluptate tempora necessitatibus iure.</p>
+    </div>
+</body>
+</html>
