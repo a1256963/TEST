@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .video{
+            width: 560px;
+            height: 490px;
+        }
+        .video iframe{
+            width: 100%;
+            height: 100%;
+        }
+        .box{
+            width: 100%;
+            height: 0;
+            background-color: #f00;
+            padding-bottom: 56.25%;
+            /* padding-bottom: %;
+            padding用%是參考父層寬度 */
+            position: relative;
+        }
+        .box iframe{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="video">
+        <iframe width="871" height="490" src="https://www.youtube.com/embed/7AtaDAsar9g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div> -->
+    <div class="box">
+        <iframe width="871" height="490" src="https://www.youtube.com/embed/7AtaDAsar9g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</body>
+</html>

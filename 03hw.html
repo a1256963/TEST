@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/175ffa51f2.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: 0;
+        }
+        .all{
+            width: 100%;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .top-title{
+            /* position: relative; */
+            max-width: 23000px;
+            width: 100%;
+            color: #fff;
+            background-color: #272727;
+            display: flex;
+            /* padding: 10px 65px; */
+        }
+        .picture-page{
+            /* position: relative; */
+            /* height: 950px; */
+            width: 100%;
+            height: 100%;
+        }
+        .first-fount{
+            padding: 15px 65px;
+            font-size: 18px;
+            padding-right: 30px;
+            font-family: 'Lato', sans-serif; 
+        }
+        .secound-fount{
+            padding-top: 15px;
+            /* padding: 10px; */
+            /* padding-left:-65px; */
+            font-size: 18px;
+            font-family: 'Lato', sans-serif"; 
+        }
+        .picture-page .background-picture{
+            position: absolute;
+            width: 100%;
+            /* height: 950px; */
+            filter: grayscale(.7);
+            filter: brightness(50%);
+            /* opacity: 0.5; */
+            z-index: -1;
+        }
+        a{
+            font-family:'Montserrat';
+            padding-left:25px;
+            z-index: 100;
+            font-weight: bold;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+        }
+        /* .manufaxbackground{
+            width: 100%;
+            background-color:#54595f;
+            height: 697px;
+            opacity: 0.5;
+            z-index: -5;
+        } */
+        .picture-page .logo{
+            position: absolute;
+            padding-left: 65px;
+            padding-top: 35px;
+            width: 260px;
+            height: 70px;
+            z-index: 2;
+        }
+        .pagemenu{
+            padding-left:570px;
+            padding-top: 52.5px;
+        }
+        .construction{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: 5;
+        }
+        .lastpage{
+            padding-left: 5%;
+            padding-top: 25%;
+            color: white;
+            font-size: 50px;
+            height: 30px;
+        }
+        .nextpage{
+            color: white;
+            padding-top: 25%;
+            padding-right: 5%;
+            font-size: 50px;
+            height: 30px;
+        }
+        .construction-title{
+            width: 100%;
+            text-align: center;
+            padding-top:20%;
+            color: #fff;
+        }
+        .construction-title h2{
+            font-size: 110px;
+        }
+        .construction-title h3{
+            font-size: 30px;
+            padding-top: 20px;
+        }
+        .see-detail{
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            padding-top: 40PX;
+        }
+        .see-detail button{
+            width: 300px;
+            height: 65px;
+            color: white;
+            background-color: #2ac5f4;
+            border-radius: 4px;
+            border: 1px solid #2ac5f4;
+            position: relative;
+        }
+        .see-detail button:hover{
+            background-color: #000;
+        }
+        .our-services{
+            margin-top: 70px;
+            width: 100%;
+            height: 50px;
+            position: relative;
+        }
+        .our-services-title::before{
+            content: '';
+            background-color:#3b3d42;
+            width: 90px;
+            height: 4px;
+            display: block;
+            position: absolute;
+            left: 770px;
+            top: 60px;
+            bottom: 0;
+        }
+
+        .our-services-title{
+            width: 100%;
+            padding-top:5%;
+        }
+        .our-services-title h2{
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+        }
+        .services-card{
+            padding-top: 70px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 2000px;
+            margin: auto;
+        }
+        .item{
+            width:31.9644079397673%;
+            height: 268.6px;
+            /* background-color: #ccc; */
+            margin: 10px 0.684462696783025%;
+            font-size: 10px;
+            display: flex;
+            /* background-color: teal; */
+        }
+        .item i{
+            padding-left: 20px;
+            font-size: 70px;
+            width: 100px;
+            height: 268.6px;
+            background-color: white;
+            color: #2ac5f4;
+        }
+        .item h1{
+            padding-top: 20px;
+            color:#333333;
+            font-size: 18px;
+        }
+        .item h2{
+            color: #2ac5f4;
+            font-size: 18px;
+        }
+        .item-detail{
+            padding-left: 10px;
+        }
+        .our-history::before{
+            content: '';
+            background-color:#3b3d42;
+            width: 90px;
+            height: 4px;
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 130px;
+            bottom: 0;
+        }
+        .our-history{
+            position: relative;
+            width: 100%;
+            /* padding-left: 50px; */
+            padding-top: 10%;
+            height: 587px;
+            display: flex;
+            background-color: #f6f6f7;
+        }
+        .our-history h1{
+            font-size: 30px;
+            padding-left: 100px;
+
+        }
+        .our-history h2{
+            font-size: 18px;
+            padding-left: 100px;
+            padding-top: 30px;
+            color: #333333;
+        }
+        .our-history h3{
+            font-size: 18px;
+            padding-left: 100px;
+            padding-top: 30px;
+            color: #888888;
+        }
+        .historydetail-box{
+            width: 65%;
+            /* align-items: center; */
+            
+        }
+        .detail-img{
+            width: 70%;
+            padding-left: 50px;
+            padding-top: -75px;
+        }
+        .detail-img img{
+            height: 487px;
+            width: 647px;
+        }
+        .historydetail-box-button{
+            padding-left: 37.5%;
+            padding-top: 75px;
+        }
+        .historydetail-box-button button{
+            width: 300px;
+            height: 65px;
+            color: white;
+            background-color: #2ac5f4;
+            border-radius: 4px;
+            border: 1px solid #2ac5f4;
+            position: relative;
+        }
+        .historydetail-box-button button:hover{
+            background-color: #000;
+        }
+        .card{
+            padding-top: 70px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 2000px;
+            margin: auto;
+        }
+        .card-detail{
+            position: relative;
+            width:25%;
+            height: 358px;
+            font-size: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card-detail h3{
+            position: absolute;
+            width: 20%;
+            padding-top:50%;
+            padding-left:40%;
+            z-index: 2;
+            font-size: 14px;
+            color:#fff;
+        }
+        .card img{
+            width: 379px;
+            height: 358px;
+            filter: brightness(50%);
+        }
+        .cardword{
+            width: 100%;
+            text-align: center;
+            z-index: 5;
+        }
+        @media screen and (min-width:768) {
+            input:checked ~ pagemenu,
+            pagemenu{
+                background-color: teal;
+                position: relative;
+                width:100%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <input type="checkbox" name="" id="menu-control">
+        <label for="menu-control" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="top-title">
+            <p class="first-fount">
+                📍 Address:4578 Marmora Road,Glasgow,D04 89GR
+            </p>
+            <p class="secound-fount">
+                📞 Phones(800) 123-0045;(800) 123-0046
+            </p>
+        </div>
+        <div class="picture-page">
+            <img class="background-picture" src="03hw/asset 1.png" alt="SEE HOW A 10-STORIES TOWER’S BEING BUILT, IN A TIME-LAPSE!">
+            <div class="manufax">
+                <img class="logo" src="03hw/asset 0.png" alt="">
+                <div class="pagemenu">
+                    <a href="#">HOME</a>
+                    <a href="#">ABOUT</a>
+                    <a href="#">SERVICES</a>
+                    <a href="#">PROJECT</a>
+                    <a href="#">BLOG</a>
+                    <a href="#">CONTACTS</a>
+                </div>
+            </div>
+            <div class="construction">
+                <div class="lastpage">
+                    <span>〈</span>
+                </div>
+                <div class="construction-title">
+                    <h2>CONSTRUCTION</h2>
+                    <h3>SEE HOW A 10-STORIES TOWER’S BEING BUILT, IN A TIME-LAPSE!</h3>
+                </div>
+                <div class="nextpage">
+                    <span>〉</span>
+                </div>
+            </div>
+            <div class="see-detail">
+                <button>
+                    SEE OUR RECENT PROJECT
+                </button>
+            </div>    
+        </div>
+        <div class="our-services">
+            <div class="our-services-title">
+                <h2>OUR SERVICES</h2>
+            </div>
+        </div>
+        <div class="services-card">
+                <div class="item">
+                    <i class="fas fa-home"></i>
+                    <div class="item-detail"><h1>BUILDING INFORMATION MODELING</h1>
+                    <h2>Oftentimes physical and functional essence of any construction project needs to be represented digitally, in a 3D model format. In...</h2></div>
+                </div>
+                <div class="item">
+                    <i class="fab fa-codepen"></i>
+                    <div class="item-detail"><h1>CONSTRUCTION SERVICES</h1>
+                    <h2>Our customers love the pace/quality tempo that we show during each of the principal construction processes! We're comfortable with any...</h2></div>
+                </div>
+                <div class="item">
+                    <i class="fas fa-th"></i>
+                    <div class="item-detail"><h1>PRE-CONSTRUCTION SERVICES</h1>
+                    <h2>We take our time on initial planning before any construction begins, to balance all the financial and efficiency issues beforehand.This...</h2></div>
+                </div>
+                <div class="item">
+                    <i class="fas fa-edit"></i>
+                    <div class="item-detail"><h1>DESIGN-BUILD</h1>
+                    <h2>If a project is not too complex, we may hire a designer-builder type of contractor, to make the longevity of...</h2></div>
+                </div>
+                <div class="item">
+                    <i class="far fa-building"></i>
+                    <div class="item-detail1" style="padding-left: 20px;"><h1>CONSTRUCTION MANAGEMENT</h1>
+                    <h2>Construction project management is essential. We're using the most time and iterations efficient life cycles for that.As you may know,...</h2></div>
+                </div>
+                <div class="item">
+                    <i class="far fa-address-book"></i>
+                    <div class="item-detail1" style="padding-left: 20px;"><h1>GENERAL CONTRACTING</h1>
+                    <h2>We have a long list of professional contractors, whom our engineers and architects enjoy to work with on a majority...</h2></div>
+                </div>
+        </div>
+        <div class="our-history">
+            <div class="historydetail-box">
+                <h1>OUR-HISTORY</h1>
+                <h2>OUR CONSTRUCTION COMPANY HAS BEEN FOUNDED 10 YEARS AGO, AT THE VERY PEAK OF THE BUILDING FRENZY IN THE US…</h2>
+                <h3>Since then we’ve built hundreds of commercial, government and private buildings and facilities. It may not sound like a lot, but if you estimate the manpower, working hours, materials, planning and correlating that were all involved in completing each separate project, then our productivity is immense!</h3>
+                <div class="historydetail-box-button">
+                    <button>READ MORE</button>
+                </div>
+            </div>
+            
+            <div class="detail-img">
+                <img src="https://ld-wp73.template-help.com/wordpress/prod_21256/v1/wp-content/uploads/2018/12/index-2.png" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-detail">
+                <div class="cardword">
+                    <h3>COMMERCIAL</h3>
+                </div>
+                <img src="03hw/asset 8.jpeg" alt="">
+            </div>
+            <div class="card-detail">
+                <div class="cardword">
+                    <h3>CULTURAL / LIFESTYLE</h3>
+                </div>
+                <img src="03hw/asset 9.jpeg" alt="">
+            </div>
+            <div class="card-detail">
+                <div class="cardword">
+                    <h3>DATA / TECHNOLOGY</h3>
+                </div>
+                <img src="03hw/asset 10.jpeg" alt="">
+            </div>
+            <div class="card-detail">
+                <div class="cardword">
+                    <h3>EDUCATIONAL</h3>
+                </div>
+                <img src="03hw/asset 11.jpeg" alt="">
+            </div>
+            <div class="card-detail">
+                <div class="cardword">
+                    <h3>GOVERNMENT / MILITARY</h3>
+                </div>
+                <img src="03hw/asset 12.jpeg" alt="">
+            </div>
+            <div class="card-detail">
+                <div class="cardword">
+                    <h3>HEALTHCARE</h3>
+                </div>
+                <img src="03hw/asset 13.jpeg" alt="">
+            </div>
+            <div class="card-detail">
+                <div class="cardword">
+                    <h3>MANUFACTURING / INDUSTRIAL</h3>
+                </div>
+                <img src="03hw/asset 14.jpeg" alt="">
+            </div>
+            <div class="card-detail">
+                <div class="cardword">
+                    <h3>WAREHOUSE / LOGISTICS</h3>
+                </div>
+                <img src="03hw/asset 15.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

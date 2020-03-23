@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .top{
+            width: 100%;
+            padding: 0;
+            list-style: none;
+            border-bottom: 2px solid #1111;
+        }
+        .top .box
+        {
+            display: flex;
+            height: 80px;
+            position: relative;
+        }
+        .top .left{
+            position: absolute;
+            left: 90px;
+            margin: 30px;
+            font-size: 20px;
+        }
+        .top .right{
+            position: absolute;
+            right: 50px; 
+            display: flex;
+            margin: 30px;
+        }
+        .right div{
+            margin: 0 10px;
+        }
+        .top1{
+            width: 100%;
+            padding-top: 50px;
+            /* padding-left: 130px; */
+            list-style: none;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 5;
+        }
+        .top1 .box{
+            margin-left: 120px;
+            display: flex;
+            height: 80px;
+            position: relative;
+        }
+        .top1 .right{
+            position: absolute;
+            right: 70px; 
+            display: flex;
+            margin: 10px;
+        }
+        .top1 .right div{
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .picture{
+            height: 550px;
+            border-bottom: 2px solid #1111;
+        }
+        .picture .left{
+            display: flex;
+        }
+        .picture .box{
+            display: flex; 
+        }
+        .picture .right
+        {
+            margin-top: 80px;
+            margin-left: 20px;
+        }
+        .picture .right p{
+            margin-top: 20px;
+            width: 300px;
+        }
+        .picture button{
+            width: 140px;
+            height: 50px;
+            color: #ffffff;
+            border-radius: 6px;
+            border: 1px solid #000000;
+            background-color: black;
+            margin-top: 40px;
+        }
+        .buttonf{
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            background-color:white;
+            justify-content:space-around;
+        }
+        .buttonf button
+        {
+            width: 165px;
+            padding: 10px;
+            margin-left: 0px;
+            margin-right: 0px;
+            text-align: center;
+            height: 300px;
+            background-color: #fffff6;
+            border: 1px solid #ffffff;
+        }
+        .buttonf button img{
+            width: 145px;
+            margin-top: 0px;
+            margin-left: -13px;
+            justify-content:space-around;
+            z-index: -1;
+        }
+        .buttonf button:hover{
+            color: #ffe605;
+            border-bottom:4px solid #aaa;
+            border-left:4px solid #aaa;
+            border-right:4px solid #aaa;
+            border-top:4px solid #aaa;
+            position: relative;
+            bottom: 4px;
+
+        }
+        .pc2 .box
+        {
+            display: flex;
+            position: relative;
+            height: 430px;
+            padding: 10px;
+            z-index: -5;
+        }
+        .pc2 .right{
+            margin-left: 20px;
+           
+        }
+        .pc2 .left img{
+            height: 430px;
+            width: 500px;
+        }
+        .pc2 .right img{
+            width: 450px;
+            height: 200px;
+        }
+        .pc2 .left h2{
+            margin-top: -170px;
+            margin-left: 30px;
+            font-size: 40px;
+            color: white;
+            font-size: bold;
+        }
+        .pc2 .left h3{
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 20px;
+            color: white;
+            font-size: bold;
+        }
+        .pc2 .box .down{
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="box">
+            <div class="left">
+                <p href="#">My acount</p>
+            </div>
+            <div class="right">
+                <div class="a">
+                    <img src="02-1hw/01.png" width="18px" height="18px" alt="">
+                </div>
+                <div class="b">
+                    <img src="02-1hw/02.png" width="18px" height="18px" alt="">
+                </div>
+                <div class="c">
+                    <img src="02-1hw/03.png" width="18px" height="18px"  alt="">
+                </div>
+                <div class="d">USD</div>
+            </div>
+        </div>
+    </div>
+    <div class="top1">
+        <div class="box">
+            <div class="left">
+                <img src="02-1hw/logo.jpg" alt="">
+                <p style="font-size: 25px;">HEALTLY FOOD</p>
+            </div>
+            <div class="right">
+                <div class="a">HOME</div>
+                <div class="b">ABOUT US</div>
+                <div class="c">COLLECTIONS</div>
+                <div class="c">BLOG</div>
+                <div class="c">SALE</div>
+                <div class="c">CONTACT US</div>
+            </div>
+        </div>
+    </div>
+    <div class="picture">
+        <div class="box">
+            <div class="left">
+                <img src="02-1hw/asset 13.jpg" style="width: 780px; height:500px" alt=""> 
+            </div>
+            <div class="right">
+                <!-- <div style="font-size: 80px;">Fresh and Delicious</div> -->
+                <font face="細明體"style="font-size: 60px;">Fresh and Delicious</font>
+                <p class="a" style="font-size: 50px; font-weight:bold;color: #ffe605">ALL YEAR ROUND!</p>
+                <button >READ MORE</button>
+            </div>
+        </div>
+    </div>
+    <div class="buttonf">
+        <div class="box">
+            <button style="font-size:26px;font-weight:bold";><img src="02-1hw/asset 50.jpg" width="160px" height="140px" alt="">Fresh Fruits</button>
+            <button style="font-size:26px;font-weight:bold";><img src="02-1hw/asset 51.jpg" width="160px" height="140px" alt="">Veggies</button>
+            <button style="font-size:26px;font-weight:bold";><img src="02-1hw/asset 52.jpg" width="160px" height="140px" alt="">Fish</button>
+            <button style="font-size:25px;font-weight:bold";><img src="02-1hw/asset 53.jpg" width="160px" height="140px" alt="">Nuts & Seeds</button>
+            <button style="font-size:26px;font-weight:bold";><img src="02-1hw/asset 54.jpg" width="160px" height="140px" alt="">Bread</button>
+            <button style="font-size:26px;font-weight:bold";><img src="02-1hw/asset 55.jpg" width="160px" height="140px" alt="">Dairy</button>
+        </div>
+    </div>
+    <div class="pc2">
+        <div class="box">
+            <div class="left">
+                <img src="02-1hw/asset 56.jpg" alt="">
+                <h2>Best Quality Products</h2>
+                <h3>Shop Now</h3>
+            </div>
+            <div class="right">
+                <div class="up">
+                    <img src="02-1hw/asset 57.jpg" alt="">
+                </div>
+                <div class="down">
+                    <img src="02-1hw/asset 58.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

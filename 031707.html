@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #menu-control{
+            position: absolute;
+            left: -100px;
+        }
+        input:checked ~ label{color: red;}
+        nav{
+            display: none;
+        }
+        nav{
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 100%;
+        }
+        nav a{
+            display: block;
+            padding: 10px 20px;
+            background-color: teal;
+            color: #fff;
+            text-decoration: none;
+        }
+        @media screen and (max-width:767){
+        input:checked ~ nav{
+            display: block;
+        }
+        .menu-btn{
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .menu-btn span{
+            position: absolute;
+            height: 4px;
+            width: 36px;
+            background-color: #666;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+        .menu-btn span:nth-child(1){
+            transform: translateY(-8px);
+        }
+        .menu-btn span:nth-child(3){
+            transform: translateY( 8px);
+        }
+        }
+        
+        @media screen and (min-width: 768px){
+            .menu-btn{
+                display: none;
+            }
+            input:checked ~ nav,
+            nav{
+                background-color: teal;
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="menu-control">
+    <label for="menu-control" class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <nav>
+        <a href="#">link</a>
+        <a href="#">link</a>
+        <a href="#">link</a>
+        <a href="#">link</a>
+        <a href="#">link</a>
+    </nav>
+    
+</body>
+</html>
