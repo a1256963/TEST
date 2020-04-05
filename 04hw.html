@@ -1,91 +1,278 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/175ffa51f2.js" crossorigin="anonymous"></script>
-    <title>Hello, world!</title>
-    <style>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/175ffa51f2.js" crossorigin="anonymous"></script>
+  <title>Hello, world!</title>
+  <style>
     /* * {
             background: #000 !important;
             color: #0f0 !important;
             outline: solid #f00 1px !important;
         } */
-        .title-btn{
-            display: block;
-            width: 40px;
-            height: 40px;
-            position: relative;
-            background-color: #fff;
-            cursor: pointer;
-        }
-        .title-btn span{
-            position: absolute;
-            height: 4px;
-            width: 36px;
-            background-color: #666;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-        .title-btn span:nth-child(1)
-        {
-            transform: translateY(-8px);
-        }
-        .title-btn span:nth-child(3){
-            transform: translateY(8px);
-        }
-        .icon-href a{
-            color: #ccc;
-            margin: 5px;
-        }
-        .icon-href a:hover{
-            color: #000;
-        }
-        .logo{
-            text-align: center;
-        }
-        .main-pic{
-            background-image: url('04hw/demo圖片檔JPG版/jpg4/greeting_image.jpg');
-            background-size: cover;
-            padding-bottom: 60%;
-        }
-        .pic{           
-            position: relative;
-            background-position: center center;
-        }
-        .main-txt{
-            position: absolute;
-            height: 100%;
-            top: 20%;
-            color: #fff;
-            font-size: 15px;
-            margin-left: 10%;
-        }
-        .join-now a{
-            bottom: 0;
-            padding: 25px 40px;                       
-        }
-        .main-btn a{
-            left: 50%;
-            position: absolute;
-            background-color: #fff;
-            color: #000;                        
-            transform: translateX(-50%);            
-            font-weight: 650;
-        }
-        .main-btn a:hover{
-            background-color: #000;
-            color: #fff;
-            text-decoration: none;
-        }
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+    .title-btn {
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .title-btn span {
+      position: absolute;
+      height: 4px;
+      width: 36px;
+      background-color: #666;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .title-btn span:nth-child(1) {
+      transform: translateY(-8px);
+    }
+
+    .title-btn span:nth-child(3) {
+      transform: translateY(8px);
+    }
+
+    .icon-href a {
+      color: #ccc;
+      margin: 5px;
+    }
+
+    .icon-href a:hover {
+      color: #000;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .main-pic {
+      background-image: url('04hw/demo圖片檔JPG版/jpg4/greeting_image.jpg');
+      background-size: cover;
+      padding-bottom: 60%;
+      margin-top: -15px;
+    }
+
+    .pic {
+      position: relative;
+      background-position: center center;
+    }
+
+    .main-txt {
+      position: absolute;
+      height: 20%;
+      width: 30%;
+      top: 20%;
+      color: #fff;
+      font-size: 15px;
+      margin-left: 5%;
+      /* background-color: #666; */
+      font-size: 40px;
+    }
+
+    .main-txt-r {
+      position: absolute;
+      height: 20%;
+      width: 25%;
+      top: 20%;
+      color: #fff;
+      font-size: 15px;
+      margin-left: 66%;
+      margin-top: 35%;
+      /* background-color: #666; */
+      font-size: 20px;
+    }
+
+    .join-now a {
+      bottom: 0;
+      padding: 25px 40px;
+    }
+
+    .main-btn a {
+      left: 50%;
+      position: absolute;
+      background-color: #fff;
+      color: #000;
+      transform: translateX(-50%);
+      font-weight: 650;
+    }
+
+    .main-btn a:hover {
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .breadcrumb {
+      height: 50px;
+      padding-top: 15px;
+    }
+
+    .breadcrumb-item {
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+
+    .thr-btn button:nth-child(1)::before {
+      content: '';
+      background-color: #81d1dd;
+      width: 50px;
+      height: 4px;
+      display: block;
+      position: absolute;
+      right: 0;
+      margin: auto;
+      left: 0;
+      top: 0;
+    }
+
+    .thr-btn button:nth-child(2)::before {
+      content: '';
+      background-color: #d4bcb5;
+      width: 50px;
+      height: 4px;
+      display: block;
+      position: absolute;
+      right: 0;
+      margin: auto;
+      left: 0;
+      top: 0;
+    }
+
+    .thr-btn button:nth-child(3)::before {
+      content: '';
+      background-color: #ffa396;
+      width: 50px;
+      height: 4px;
+      display: block;
+      position: absolute;
+      right: 0;
+      margin: auto;
+      left: 0;
+      top: 0;
+    }
+
+    .thr-btn button {
+      text-align: center;
+      height: 250px;
+      background-color: #fff;
+      margin: 20px;
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+      position: relative;
+    }
+
+    .thr-btn button h2 {
+      font-size: 50px;
+    }
+
+    .thr-btn button h3 {
+      font-size: 20px;
+      color: rgb(76, 77, 81);
+    }
+
+    .thr-btn {
+      width: 100%;
+
+    }
+
+    .hair {
+      position: absolute;
+      height: 75%;
+      width: 50%;
+      top: 20%;
+      color: #000;
+      font-size: 15px;
+      margin-left: 50%;
+      /* background-color: #666; */
+      font-size: 220px;
+    }
+
+    .hair h2:nth-child(1) {
+      font-size: 100px;
+      color: #fff;
+    }
+
+    .hair h2:nth-child(2) {
+      margin-top: -30px;
+      font-size: 100px;
+      color: #000;
+    }
+
+    .hair h3 {
+      font-size: 30px;
+    }
+
+    .hair button {
+      position: absolute;
+      bottom: 0%;
+      height: 35px;
+      width: 15%;
+      font-size: 10px;
+      font-weight: bold;
+      background-color: #F3F2F9;
+      border: 3px solid #000;
+      /* opacity: ; */
+    }
+
+    .hair button:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    #BROWSE {
+      margin: 30px;
+    }
+
+    .hair-care-a button {
+      font-size: 20px;
+      border: 2px solid #000;
+      background-color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .hair-care-a a:nth-child(1):hover {
+      background-color: #fef7f6;
+    }
+    .hair-care-a a:nth-child(1):hover button{
+      background-color: #181A1F;
+      color: #fff;
+    }
+    .hair-care-a a:nth-child(2):hover {
+      background-color: #fef7f6;
+    }
+    .hair-care-a a:nth-child(2):hover button{
+      background-color: #181A1F;
+      color: #fff;
+    }
+    .hair-care-a a:nth-child(3):hover {
+      background-color: #fef7f6;
+    }
+    .hair-care-a a:nth-child(3):hover button{
+      background-color: #181A1F;
+      color: #fff;
+    }
+    .hair-care-a a:nth-child(4):hover {
+      background-color: #fef7f6;
+    }
+    .hair-care-a a:nth-child(4):hover button{
+      background-color: #181A1F;
+      color: #fff;
+    }
+    /* <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161732245-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -93,118 +280,211 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-161732245-1');
-</script>
+</script> */
+  </style>
+</head>
 
-    </style>
-  </head>
-  <body>
-    <div class="top-dropdown">
-        <div class="row justify-content-around d-flex mr-0">
-          <div class="dropdown">
-            <div class="title-btn mx-auto" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="dropdown-menu">
-                <label class="dropdown-header">Currency</label>                    
-                <a class="dropdown-item" href="#">My Account</a>
-                <a class="dropdown-item" href="#">Wishlist</a>
-                <a class="dropdown-item" href="#">Checkout</a>
-            </div>
-          </div>
-            <form class="form-inline my-2 order-last">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>      
+<body>
+  <div class="top-dropdown">
+    <div class="row justify-content-around d-flex mr-0">
+      <div class="dropdown">
+        <div class="title-btn mx-auto" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+        <div class="dropdown-menu">
+          <label class="dropdown-header">Currency</label>
+          <a class="dropdown-item" href="#">My Account</a>
+          <a class="dropdown-item" href="#">Wishlist</a>
+          <a class="dropdown-item" href="#">Checkout</a>
+        </div>
+      </div>
+      <form class="form-inline my-2 order-last">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
-    <div class="logo row d-md-flex justify-content-md-around mr-0">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-          <a href="#"><img src="04hw/demo圖片檔JPG版/jpg4/logo.jpg" alt="STYLE FACTORY" class="justify-content-center"></a>
-      </div>
-      <div class="icon-href my-auto col-md-4">
-          <nav class="content">
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
-              <a href="#"><i class="fab fa-google-plus-g"></i></a>
-          </nav>
-      </div>
   </div>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb justify-content-center">
-          <li class="breadcrumb-item"><a href="#">PRODUCTS</a></li>
-          <li class="breadcrumb-item"><a href="#">BLOG</a></li>
-          <li class="breadcrumb-item"><a href="#">SALE</a></li>
-          <li class="breadcrumb-item"><a href="#">ABOUT US</a></li>
-          <li class="breadcrumb-item"><a href="#">CONTACT</a></li>
-        </ol>
-    </nav>
-    <div class="main-pic pic">
-      <h3 class="main-txt">
-          <p>JOIN OUR DISCOUNT CLUB & SAVE</p>
-          <p>25% ON EVERYTHING!</p>
-      </h3>
-      <div class="main-btn join-now">
-          <a href="#" class="ml-20 ml-md-15">JOIN NOW <i class="far fa-arrow-alt-circle-right"></i></a>
-      </div>
-      </div>
-    <div class="wrap">
-      <!-- no-gutters滿版 -->
-      <!-- img w-100圖100% -->
-            <div class="row justify-content-center mr-0">
-                <div class="col-3"><img src="http://picsum.photos/300/300?random=1" class="d-block w-100" alt="">
-                  <h3>asdasdasdasd</h3>
-                </div>
+  <div class="logo row d-md-flex justify-content-md-around mr-0">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <a href="#"><img src="04hw/demo圖片檔JPG版/jpg4/logo.jpg" alt="STYLE FACTORY" class="justify-content-center"></a>
+    </div>
+    <div class="icon-href my-auto col-md-4">
+      <nav class="content">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      </nav>
+    </div>
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb justify-content-center" style="background-color: #fff;">
+      <li class="breadcrumb-item"><a href="#">PRODUCTS</a></li>
+      <li class="breadcrumb-item"><a href="#">BLOG</a></li>
+      <li class="breadcrumb-item"><a href="#">SALE</a></li>
+      <li class="breadcrumb-item"><a href="#">ABOUT US</a></li>
+      <li class="breadcrumb-item"><a href="#">CONTACT</a></li>
+    </ol>
+  </nav>
+  <div class="main-pic pic">
+    <h3 class="main-txt">
+      <p>JOIN OUR DISCOUNT CLUB & SAVE 25% ON EVERYTHING!</p>
+      <!-- <p>25% ON EVERYTHING!</p> -->
+    </h3>
+    <h3 class="main-txt-r">
+      <p>We offer a broad assortment of the best and latest styles from the finest brands. Only at Style Factory, you
+        will find so many exclusive images, videos, customer reviews and expert tips to help you choose the perfect
+        styles and colors.</p>
+      <!-- <p>25% ON EVERYTHING!</p> -->
+    </h3>
+    <div class="main-btn join-now">
+      <a href="#" class="ml-20 ml-md-15">JOIN NOW <i class="far fa-arrow-alt-circle-right"></i></a>
+    </div>
+  </div>
+  <div class="wrap">
+    <!-- no-gutters滿版 -->
+    <!-- img w-100圖100% -->
+    <div class="thr-btn row justify-content-center mr-0">
+      <button class="col-md-3" style="color: #81d1dd; border-top: 1px solid #81d1dd;">
+        <h2>
+          NEW ARRIVALS
+        </h2>
+        <h3>
+          SEE OUR LATEST MUST-HAVES>>
+        </h3>
+      </button>
+      <button class="col-md-3" style="color: #d4bcb5; border-top: 1px solid #d4bcb5 ;">
+        <h2>
+          WE LOVE<i class="far fa-heart"></i>
+        </h2>
+        <h3>
+          SEE OUR LATEST MUST-HAVES>>
+        </h3>
+      </button>
+      <button class="col-md-3" style="color: #ffa396; border-top: 1px solid #ffa396;">
+        <h2>
+          FREE SHIPPING
+        </h2>
+        <h3>
+          SEE OUR LATEST MUST-HAVES>>
+        </h3>
+      </button>
+      <!-- </div>
                 <div class="col-3"><img src="http://picsum.photos/300/300?random=2" class="d-block w-100" alt="">
                 </div>
                 <div class="col-3"><img src="http://picsum.photos/300/300?random=3" class="d-block w-100" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="wrap"><div class="row no-gutters justify-content-center">
-        <div class="col-10"><img src="04hw/demo圖片檔JPG版/jpg4/blog2_536x272_crop_top.jpg" class="d-block w-100" alt=""></div>
-        </div></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <h2>BROWSE OUR CATEGORIES</h2>
-        </div>
-        <div class="wrap">
-          <!-- no-gutters滿版 -->
-          <!-- img w-100圖100% -->
-                <div class="row no-gutters">
-                    <div class="col-md-3"><img src="04hw/demo圖片檔JPG版/jpg4/category1_c699b5ea-b75e-4185-9a8e-2a65b0fc3814_430x396_crop_top.jpg" class="d-block w-100" alt=""></div>
-                    <div class="col-md-3"><img src="04hw/demo圖片檔JPG版/jpg4/category2_430x396_crop_top.jpg" class="d-block w-100" alt=""></div>
-                    <div class="col-md-3"><img src="04hw/demo圖片檔JPG版/jpg4/category3_430x396_crop_top.jpg" class="d-block w-100" alt=""></div>
-                    <div class="col-md-3"><img src="04hw/demo圖片檔JPG版/jpg4/category4_430x396_crop_top.jpg" class="d-block w-100" alt=""></div>
-                </div>
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <h2>PRODUCTS ON SALE</h2>
-        </div>
-        <div class="wrap">
-          <!-- no-gutters滿版 -->
-          <!-- img w-100圖100% -->
-                <div class="row no-gutters">
-                    <div class="col-3"><img src="04hw/demo圖片檔JPG版/jpg4/argan_oil_hair_mask_01_370x370_crop_top.jpg" class="d-block w-100" alt=""></div>
-                    <div class="col-3"><img src="04hw/demo圖片檔JPG版/jpg4/garnier_fructis_01_370x370_crop_top.jpg" class="d-block w-100" alt=""></div>
-                    <div class="col-3"><img src="04hw/demo圖片檔JPG版/jpg4/herbal_essences_01_370x370_crop_top.jpg" class="d-block w-100" alt=""></div>
-                    <div class="col-3"><img src="04hw/demo圖片檔JPG版/jpg4/l_oreal_paris_studio_line_1_370x370_crop_top.jpg" class="d-block w-100" alt=""></div>
-                </div>
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <h2 s>SEE WHAT'S NEW ON OUR BLOG</h2>
+                </div> -->
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="row no-gutters justify-content-center">
+      <div class="col-11" style="position:relative;">
+        <img src="04hw/demo圖片檔JPG版/jpg4/promo_block_img.jpg" class="d-block w-100" alt="">
+        <div class="hair">
+          <h2>
+            HAIR
+          </h2>
+          <h2>
+            EXTENSIONS
+          </h2>
+          <h3>
+            ADD LENGTH & VOLUME IN SECONDS
+          </h3>
+          <button>
+            READ MORE
+          </button>
         </div>
       </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="row justify-content-center" id="BROWSE">
+      <h2 style="font-size: 50px;">BROWSE OUR CATEGORIES</h2>
+    </div>
+    <div class="wrap" style="margin: 80px;">
+      <!-- no-gutters滿版 -->
+      <!-- img w-100圖100% -->
+      <div class="hair-care-a row no-gutters"">
+        <a href=" #" class="col-md-3 "><img
+          src="04hw/demo圖片檔JPG版/jpg4/category1_c699b5ea-b75e-4185-9a8e-2a65b0fc3814_430x396_crop_top.jpg"
+          class="d-block w-100" alt="">
+        <p style="text-align: center;font-size: 30px;">MEN'S HAIR CARE</p>
+        <center>
+          <button>
+            7 products
+          </button>
+        </center>
+
+        </a>
+        <a href="#" class="col-md-3"><img src="04hw/demo圖片檔JPG版/jpg4/category2_430x396_crop_top.jpg"
+            class="d-block w-100" alt="">
+          <p style="text-align: center;font-size: 30px;">HAIR STYLING</p>
+          <center>
+            <button>
+              13 products
+            </button>
+          </center>
+        </a>
+        <a href="#" class="col-md-3"><img src="04hw/demo圖片檔JPG版/jpg4/category3_430x396_crop_top.jpg"
+            class="d-block w-100" alt="">
+          <p style="text-align: center;font-size: 30px;">HAIR HEALTH TREATMENT</p>
+          <center>
+            <button>
+              9 products
+            </button>
+          </center>
+        </a>
+        <a href="#" class="col-md-3"><img src="04hw/demo圖片檔JPG版/jpg4/category4_430x396_crop_top.jpg"
+            class="d-block w-100" alt="">
+          <p style="text-align: center;font-size: 30px;">HAIR CARE FOR KIDS</p>
+          <center>
+            <button>
+              7 products
+            </button>
+          </center>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <h2>PRODUCTS ON SALE</h2>
+      </div>
+      <div class="wrap">
+        <!-- no-gutters滿版 -->
+        <!-- img w-100圖100% -->
+        <div class="row no-gutters">
+          <div class="col-3"><img src="04hw/demo圖片檔JPG版/jpg4/argan_oil_hair_mask_01_370x370_crop_top.jpg"
+              class="d-block w-100" alt=""></div>
+          <div class="col-3"><img src="04hw/demo圖片檔JPG版/jpg4/garnier_fructis_01_370x370_crop_top.jpg"
+              class="d-block w-100" alt=""></div>
+          <div class="col-3"><img src="04hw/demo圖片檔JPG版/jpg4/herbal_essences_01_370x370_crop_top.jpg"
+              class="d-block w-100" alt=""></div>
+          <div class="col-3"><img src="04hw/demo圖片檔JPG版/jpg4/l_oreal_paris_studio_line_1_370x370_crop_top.jpg"
+              class="d-block w-100" alt=""></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <h2 s>SEE WHAT'S NEW ON OUR BLOG</h2>
+        </div>
+      </div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
