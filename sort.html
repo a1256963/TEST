@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .pic {
+            width: 150px;
+        }
+        .top td:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body onload="onreload()">
+    <table id="ade" border="1">
+    </table>
+
+    <script>
+
+        var products = [
+            // {
+            //     "sku": "編號",
+            //     "price": "價格",
+            //     "category": "容量",
+            //     "name": "名稱",
+            //     "圖片": "圖片"
+            // },
+            {
+                "sku": "MW762",
+                "price": 10900,
+                "category": "32GB",
+                "name": "10.2 吋 iPad Wi-Fi 機型 32GB - 金色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_gold.png'
+            },
+            {
+                "sku": "MW792",
+                "price": 13900,
+                "category": "128GB",
+                "name": "10.2 吋 iPad Wi-Fi 機型 128GB - 金色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_gold.png'
+            },
+            {
+                "sku": "MW742",
+                "price": 10900,
+                "category": "32GB",
+                "name": "10.2 吋 iPad Wi-Fi 機型 32GB - 太空灰色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_space.png'
+            },
+            {
+                "sku": "MW772",
+                "price": 13900,
+                "category": "128GB",
+                "name": "10.2 吋 iPad Wi-Fi 機型 128GB - 太空灰色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_space.png'
+            },
+            {
+                "sku": "MW752",
+                "price": 10900,
+                "category": "32GB",
+                "name": "10.2 吋 iPad Wi-Fi 機型 32GB - 銀色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_silver.png'
+            },
+            {
+                "sku": "MW782",
+                "price": 13900,
+                "category": "128GB",
+                "name": "10.2 吋 iPad Wi-Fi 機型 128GB - 銀色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_silver.png'
+            },
+            {
+                "sku": "MW6D2",
+                "price": 15400,
+                "category": "32GB",
+                "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 金色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_gold.png'
+            },
+            {
+                "sku": "MW6G2",
+                "price": 18400,
+                "category": "128GB",
+                "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 金色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_gold.png'
+            },
+            {
+                "sku": "MW6A2",
+                "price": 15400,
+                "category": "32GB",
+                "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 太空灰色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_space.png'
+            },
+            {
+                "sku": "MW6E2",
+                "price": 18400,
+                "category": "128GB",
+                "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 太空灰色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_space.png'
+            },
+            {
+                "sku": "MW6C2",
+                "price": 15400,
+                "category": "32GB",
+                "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 32GB - 銀色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_silver.png'
+            },
+            {
+                "sku": "MW6F2",
+                "price": 18400,
+                "category": "128GB",
+                "name": "10.2 吋 iPad Wi-Fi + 行動網路機型 128GB - 銀色",
+                "pic": 'https://buildschool.sharepoint.com/sites/BS20-JavaScript/Shared%20Documents/General/ipad_silver.png'
+            }
+        ]
+        // var a = document.getElementById('ade');
+        // for (var i = 0; i < products.length; i++) {
+        //     let tr = document.createElement('tr');
+        //     a.appendChild(tr);
+        //     for (var j in products[i]) {
+        //         let td = document.createElement('td');
+        //         td.innerHTML = products[i][j];
+        //         tr.appendChild(td);
+        //     }
+
+        // }
+        var noprice = 0;
+        var nosku = 0;
+        var nocategory = 0;
+        function clear() {
+            var b = document.getElementById('ade');
+            b.innerHTML = '';
+            onreload();
+        }
+        function up() {
+            if (noprice == 0) {
+                products = products.sort(function (a, b) {
+                    return a.price < b.price ? 1 : -1;
+                });
+                noprice=1;
+            }
+            else {
+                products = products.sort(function (a, b) {
+                    return a.price > b.price ? 1 : -1;
+                });
+                noprice=0;
+            }
+            clear();
+        }
+        function no() {
+            if (nosku == 0) {
+                products = products.sort(function (a, b) {
+                    return a.sku < b.sku ? 1 : -1;
+                });
+                nosku=1;
+            }
+            else {
+                products = products.sort(function (a, b) {
+                    return a.sku > b.sku ? 1 : -1;
+                });
+                nosku=0;
+            }
+            clear();
+        }
+        function ty() {
+            if (nocategory == 0) {
+                products = products.sort(function (a, b) {
+                    return a.category < b.category ? 1 : -1;
+                });
+                nocategory=1;
+            }
+            else {
+                products = products.sort(function (a, b) {
+                    return a.category > b.category ? 1 : -1;
+                });
+                nocategory=0;
+            }
+            clear();
+        }
+        function onreload() {
+            var a = document.getElementById('ade');
+            a.innerHTML = `<tr class="top">
+                <td onclick="no()">編號</td>
+                <td onclick="up()">價格</td>
+                <td onclick="ty()"">容量</td>
+                <td>名稱</td>
+                <td>圖片</td>
+            </tr>`;
+            for (var i in products) {
+                let tr = document.createElement('tr');
+                a.appendChild(tr);
+                for (var j in products[i]) {
+                    let td = document.createElement('td');
+                    if (j == 'pic') {
+                        let th = document.createElement('td');
+                        td.innerHTML = `<img src="${products[i][j]}" alt="圖片損毀" class="pic">`;
+                    } else {
+                        td.innerHTML = products[i][j];
+                    }
+                    tr.appendChild(td);
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
