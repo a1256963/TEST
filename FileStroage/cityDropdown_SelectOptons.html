@@ -26,10 +26,17 @@
     <script>
         // function GetAddressJSON(){
         fetch("http://127.0.0.1:5502/FileStroage/TaiwanAdress_Simple.json")
-            .then(response => response.text())
+            .then(response => response.json())
             .then(text => {
                 console.log(typeof text);
                 console.log(text);
+                for(let i=0;i<text.length;i++)
+                {
+                    let option1=document.createElement('option');
+                    option1.value=text[i].id;
+                    option1.text=text[i].name;
+                    citySelect.add(option1,null);
+                }
             })
             .catch(ex => {
                 // $g("body").innerHTML = ex;
