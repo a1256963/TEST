@@ -10,39 +10,79 @@
 <body>
     <!-- select1 -->
     <select name="cities" id="cities">
-        <option value="">---請選擇縣市---</option>
-        <option value="taipei">台北</option>
-        <option value="taoyuan">桃園</option>
-        <option value="taichung">台中</option>
     </select>
-
     <!-- select2 -->
     <select name="district" id="district">
-        <option value="">---請選擇行政區---</option>
-        <option value="taipei01">中正區</option>
-        <option value="taipei02">萬華區</option>
-        <option value="taipei03">信義區</option>
     </select>
     <script>
-        // function GetAddressJSON(){
-        fetch("http://127.0.0.1:5502/FileStroage/TaiwanAdress_Simple.json")
-            .then(response => response.json())
-            .then(text => {
-                console.log(typeof text);
-                console.log(text);
-                for(let i=0;i<text.length;i++)
-                {
-                    let option1=document.createElement('option');
-                    option1.value=text[i].id;
-                    option1.text=text[i].name;
-                    citySelect.add(option1,null);
-                }
-            })
-            .catch(ex => {
-                // $g("body").innerHTML = ex;
-            })
+        let zipcodeArray = [];
+        let citySelect = document.getElementById("cities");
+        let districtSelect = document.getElementById("district");
+        function GetAddressJSON() {
+            fetch("http://127.0.0.1:5502/FileStroage/TaiwanAdress_Simple.json")
+                .then(response => response.text())
+                .then(text => {
+                    zipcodeArray = JSON.parse(text);
+                    zipcodeArray.forEach((item, index) => {
+                        let option1 = document.createElement('option');
+                        option1.value = index;
+                        option1.text = zipcodeArray[index].City;
+                        cities.add(option1, null);
+                    });
+                    let option2 = document.createElement('option');
+                    option2.value = -1;
+                    option2.text = '---請選擇縣市---';
+                    option2.setAttribute('selected', '');
+                    citySelect.add(option2, 0);
 
-        // }
+                })
+                .catch(ex => {
+                    // $g("body").innerHTML = ex;
+                })
+
+        }
+        citySelect.onchange = citySelectChange(this.selectedIndex);
+        function citySelectChange(Index) {
+            console.log(Index);
+            zipcodeArray[Index].Districts.forEach(item => {
+                let option3 = document.createElement('option');
+                option3.textContent = item.District;
+                districtSelect.appendChild(option3);
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // console.log(citySelect.selectOptions[0]);
+            // selectCityValue = citySelect.selectOptions[0].value;
+            // selectCityText = citySelect.selectOptions[0].text;
+            // let districtArray = zipcodeArray.find(c.City == selectCityText).Districts;
+            // console.log(districtArray);
+
+            // districtSelect.innerHTML = "";
+            // let opt0 = document.createElement('option');
+            // opt0.value = -1;
+            // opt0.text = '---請選擇縣行政區---';
+            // citySelect.add(opt0, null);
+
+            // districtArray.forEach((item, index) => {
+            //     let option1 = document.createElement('option');
+            //     option1.value = districtArray[index].Zipcode;
+            //     option1.text =districtArray[index].Districts;
+            //     citySelect.add(option1, null);
+            // })
+        }
+        window.onload = GetAddressJSON;
 
     </script>
 </body>
